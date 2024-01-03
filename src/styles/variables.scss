@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use 'sass:color';
+
+$palettes: ();
+
+$colors: (
+  light: #ffffff,
+  dark: #121517,
+
+  // UI colors
+  primary: #a50f0f,
+  success: #44885b,
+  error: #a50f0f,
+  info: #1573b7,
+  warning: #dc6504,
+
+  // UI Extras
+  divider: #505d66,
+);
+
+// generate 3 variants of each color
+@each $color, $value in $colors {
+  $palettes: map.merge(
+    $palettes,
+    (
+      $color: (
+        darkest: color.scale($value, $lightness: -30%),
+        darker: color.scale($value, $lightness: -20%),
+        dark: color.scale($value, $lightness: -10%),
+        base: $value,
+        light: color.scale($value, $lightness: 10%),
+        lighter: color.scale($value, $lightness: 20%),
+        lightest: color.scale($value, $lightness: 30%),
+      ),
+    )
+  );
+}

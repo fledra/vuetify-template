@@ -1,0 +1,13 @@
+@mixin animation-blink($animName, $prop, $from: currentColor, $to: transparent, $time: 1s) {
+  $animation-name: animation-blink-#{$animName};
+  animation: $animation-name $time ease-in-out infinite alternate;
+
+  @keyframes #{$animation-name} {
+    0% {
+      #{$prop}: $from;
+    }
+    to {
+      #{$prop}: $to;
+    }
+  }
+}

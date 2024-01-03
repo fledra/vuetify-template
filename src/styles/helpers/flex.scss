@@ -1,0 +1,9 @@
+.flex-1 {
+  flex: 1;
+}
+
+.flex-1-child {
+  & > * {
+    flex: 1;
+  }
+}

@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use 'sass:meta';
+@import '~/variables';
+
+@function color($color, $tone: base) {
+  @if map.has-key($palettes, $color) {
+    $paletteColor: map.get($palettes, $color);
+
+    @if meta.type-of($paletteColor) == 'color' {
+      @return $paletteColor;
+    }
+
+    @if map.has-key($paletteColor, $tone) {
+      $paletteTone: map.get($paletteColor, $tone);
+      @return $paletteTone;
+    }
+
+    @warn "unknown tone `#{$tone}` in color `#{$color}`";
+    @return null;
+  }
+
+  @warn "unknown color `#{$color}` in palette";
+  @return null;
+}

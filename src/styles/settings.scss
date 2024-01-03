@@ -1,0 +1,17 @@
+@use 'vuetify/settings' with (
+  $color-pack: false,
+
+  // Buttons
+  $button-colored-disabled: false,
+  $button-transition-property: #{'box-shadow, transform, opacity'},
+
+  // Divider
+  $divider-opacity: 0.5,
+
+  // List item
+  $list-item-icon-margin-start: 16px,
+  $list-item-icon-margin-end: 16px,
+
+  // Overlays
+  $overlay-scrim-background: #121517,
+);

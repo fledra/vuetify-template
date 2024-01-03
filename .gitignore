@@ -1,0 +1,39 @@
+# IDE specific
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# local files
+node_modules/
+*.local
+*.log
+*.old
+.DS_Store
+
+# Log files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# build artifacts
+dist
+dist-ssr
+
+# auto-import defs
+.eslintcache
+.eslintrc-auto-import.json
+**/generated
+
+# local env files
+.env*
+!.env.example
